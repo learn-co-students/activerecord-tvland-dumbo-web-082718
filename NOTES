@@ -1,0 +1,34 @@
+character = child
+actor = parent
+shows = parent
+
+actor --< character >---shows
+
+actor
+has_many :character
+has_many :show, though: :character
+
+charactor
+belongs_to :actor
+belongs_to :show
+
+shows
+has_many :character
+has_many :actor, though: :character
+
+
+"Remember to run rake db:migrate
+in the terminal before you run
+your tests and after you make
+any new migrations!"
+
+when to run rake db:migrate:
+
+1. rake db:migrate
+2. learn or rspec
+
+BUT!!!!!!
+- when to run rake db:migrate when you make changes
+to migration file:
+1. make change to migration file first
+2. rake db:migrate
